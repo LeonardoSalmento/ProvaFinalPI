@@ -1,0 +1,23 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+    <form class="form-signin" action="{% url 'desencurtar_url' %}" method="POST">
+        {% csrf_token %}
+        
+        <input id="id_url" name="texto_original" class="form-control" placeholder="Coloque a url curta aqui" required autofocus>
+        
+        <button class="btn btn-lg btn-primary " type="submit" >Submit</button>
+        
+        </form>
+
+    <body>
+
+    {{site.texto_original}}
+
+</body>
+
+
+</html>

@@ -1,0 +1,31 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+{% if messages %}
+    {% for message in messages %}
+        {% if message.tags == "warning" %}<p  class="{{ message.tags }} alert alert-warning">{{ message }}</p>{% endif %}
+    {% endfor %}
+{% endif %}
+    
+    <form class="form-signin" action="{% url 'encurtar' %}" method="POST">
+    {% csrf_token %}
+    
+    <input id="id_url" name="texto_original" class="form-control" placeholder="Coloque o seu site" required autofocus>
+    
+    <button class="btn btn-lg btn-primary " type="submit" >Submit</button>
+    
+    </form>
+
+   
+  
+
+</body>
+
+
+
+</html>
